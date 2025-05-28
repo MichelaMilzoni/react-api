@@ -5,11 +5,16 @@ import { Card } from "react-bootstrap";
 
 const ActorCard = ({ actor }) => {
   return (
-    <Card style={{ width: "18rem" }} className="mb-3">
-      <Card.Img variant="top" src={actor.image} alt={actor.name} />
-      <Card.Body>
-        <Card.Title>{actor.name}</Card.Title>
-        <Card.Text>
+    <Card className="mb-3 shadow rounded border text-center h-100">
+      <Card.Img
+        variant="top"
+        src={actor.image}
+        alt={actor.name}
+        className="img-fluid card-img-top"
+      />
+      <Card.Body className="d-flex flex-column">
+        <Card.Title className="fw-bold fs-5">{actor.name}</Card.Title>
+        <Card.Text className="fs-6">
           <strong>Anno di nascita:</strong> {actor.birthYear} <br />
           <strong>Nazionalità:</strong> {actor.nationality} <br />
           <strong>Biografia:</strong> {actor.biography} <br />
@@ -19,5 +24,4 @@ const ActorCard = ({ actor }) => {
     </Card>
   );
 };
-
 export default ActorCard;

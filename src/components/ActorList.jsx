@@ -26,11 +26,11 @@ const ActorList = () => {
       });
   }, []);
 
-  return (
+ return (
     <Container>
       <Row className="justify-content-center">
         {actors.map((actor) => (
-          <Col key={actor.id} md={4} sm={6}>
+          <Col key={actor.id} md={3} sm={6} className="d-flex">
             <ActorCard actor={actor} />
           </Col>
         ))}
