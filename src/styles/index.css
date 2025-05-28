@@ -1,18 +1,29 @@
 /* src/styles/index.css */
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f8f9fa;
 }
-
 
 .card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 
+.card {
+  height: 100%; /* Assicura che le card abbiano altezza uniforme */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1; /* Espande il contenuto uniformemente */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuisce gli elementi */
+}
+
 .card-img-top {
-  height: 250px; /* Imposta la stessa altezza per tutte le immagini */
-  object-fit: cover; /* Mantiene il ritaglio uniforme */
+  height: 350px; /* Imposta altezza uniforme per le immagini */
+  object-fit: cover; /* Garantisce adattamento proporzionato */
 }
