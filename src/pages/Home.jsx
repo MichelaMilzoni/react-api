@@ -6,7 +6,7 @@ import ActorList from "../components/ActorList";
 const Home = () => {
   return (
     <div>
-      <h1>Elenco Attori</h1>
+      <h1 className="text-center">Elenco Attori</h1>
       <ActorList />
     </div>
   );

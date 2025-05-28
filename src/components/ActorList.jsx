@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import fetchActors from "../services/FetchActors";
 // fetchActors: Funzione esterna che richiama l’API per ottenere i dati degli attori.
 
+import ActorCard from "./ActorCard";
+import { Container, Row, Col } from "react-bootstrap";
+
 const ActorList = () => {
   const [actors, setActors] = useState([]);
 //Inizialmente, actors è un array vuoto.
@@ -18,12 +21,22 @@ const ActorList = () => {
       .then((data) => {
         if (data) {
           setActors(data);  // aggiorno lo stato con setActors.
-          console.log(data); // Stampo gli attori in console (Milestone 1)
+        //   console.log(data); // Stampo gli attori in console (Milestone 1)
         }
       });
   }, []);
 
-  return <div>Apri la console per vedere la lista degli attori!</div>;
+  return (
+    <Container>
+      <Row className="justify-content-center">
+        {actors.map((actor) => (
+          <Col key={actor.id} md={4} sm={6}>
+            <ActorCard actor={actor} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
 };
 
 export default ActorList;
